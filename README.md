@@ -10,7 +10,7 @@ Depending on the data availability it might be needed a location device like a s
 
 It’s is required to have access to the area of interest. A dedicated team to recognize the fieldwork and engage the local population will provide information that otherwise cannot be acquired. This team will be responsible to gather on the field spatial information and communicate it with the team in charge of spatial analysis. 
 
-Most of the communication should be based on thematic maps (Figure 1). These maps are based on specific data regarding open spaces, markets, roads, physical risks, community services. Reports should gather imagery, location and commentaries. Is highly recommended to compose maps with applications like My Maps . Such applications allow you to easily build thematic maps based on the gathered information on the ground. It also makes it easier to share the information via link. 
+Most of the communication should be based on thematic maps [Figure 1][https://github.com/AdrianChC/Tech_guide_on_urban_network_for_emergency_response/blob/main/figs/fig01.jpg]. These maps are based on specific data regarding open spaces, markets, roads, physical risks, community services. Reports should gather imagery, location and commentaries. Is highly recommended to compose maps with applications like My Maps . Such applications allow you to easily build thematic maps based on the gathered information on the ground. It also makes it easier to share the information via link. 
 
 Make sure that any photograph taken on field has also location data. It reduces human error at reporting location of any event. Consider the use of a single My Maps composition to stock each field work report organized into different layers.
 
