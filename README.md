@@ -33,6 +33,8 @@ Identify socio spatial divisions inside the area of interest. That is non visibl
 ## Terrain data acquisition
 Acquire a digital elevation model for the area of interest. This might be acquired from the USGS Earth Explorer  platform. Find the mission SRTM  dataset, and find the most recent capture of the area of interest. Another characteristic to consider is resolution; a recommended one is 1 arc-second or 30m. Other sources of information might be the Copernicus Open Access Hub.
 
+<img src="/figs/fig04.jpg" alt="DEM covering the area of Bhopal (Madhya Pradesh, India)" width="75%"/>
+
 The DEM will be the main source of information to derive morphological and hydrological analysis. As the DEM provided by any platform would cover a bigger size area than the area of interest, it is required to clip it to a more practical size (Figure 4) in order to make processing faster. Use the ‘Clip raster by extend’ algorithm from the GDAL  modules; find this and any other algorithm on the Processing Toolbox.
 
 ## Hydrological analysis
@@ -41,6 +43,8 @@ The Terrain Wetness Index (TWI) provides a relative score showing the areas wher
 (pending figure)
 
 In the QGIS environment, apply the next sequence of algorithms to calculate it: Use the ‘Flow Accumulation’ algorithm from the SAGA  modules; apply it to the DEM clip. The result is the local upslope catchment area (UCA). The local slope is calculated with the native ‘Slope’ algorithm; it should be transformed into radians. But first, the 0 values corrected since it would induce error when calculating natural logarithm; add 0.001 to the slope values.
+
+<img src="/figs/fig05.gif" alt="DEM and TWI (from left to right)" width="75%"/>
 
 Then, multiply the modified slope value 0.01745 times. In order to do this, use the ‘Raster Calculator’ algorithm; use it for any raster algebra operation. Finally, calculate the log normal function. The UCA must be multiplied by the X and Y values of raster pixel dimensions.
 
