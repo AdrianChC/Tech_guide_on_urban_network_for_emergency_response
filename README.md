@@ -16,17 +16,17 @@ Make sure that any photograph taken on field has also location data. It reduces 
 
 Interoperability between this platform and qgis is reliable. To import/export the reports data just find the ‘Export to KML/KMZ’ action and select the necessary information; a vector layer will be created. On the qgis environment, open the data. Although it will not present the same icons, color or style the data would be just the same. It will be organized by vector type; that is points, lines or polygons.
 
-![Field Work Report](/figs/fig01.jpg "Field Work Report")
+<img src="/figs/fig01.jpg" alt="Field Work Report" width="75%"/>
 
 ## Major tasks and workflow
 There are 10 major task involved in this guide. Some of them are independent and some others are interdependent. [(Figure 02)][2] represents the most efficient interaction between them. In the graph, the task are organized so that it could produce an outcome as fast as possible. Use this workflow schema to take advantage of the independency among task and stay ahead in the project’s development. However, organizational or environmental factors might affect the flow of information. Use alternatives responding to the project’s environment.
 
-![Suggested Work Flow](/figs/fig02.jpg "Suggested Work Flow")
+<img src="/figs/fig02.jpg" alt="Suggested Work Flow" width="75%"/>
 
 ## Spatial scope definition
 Defining the spatial scope means to decide the extension of the urban area that will be covered. This location, from now on called area of interest, should be easily identifiable. Use land administration information or toponym to identify the spatial shape of this place. A simple query (Figure 3) on any map online service like Google Maps , Bing  or Open Street Maps  will provide a quick idea of it.
 
-![Boundaries of an AOI found on Google Maps](/figs/fig03.jpg "Boundaries of an AOI found on Google Maps")
+<img src="/figs/fig03.jpg" alt="Boundaries of an AOI found on Google Maps" width="75%"/>
 
 Identify socio spatial divisions inside the area of interest. That is non visible borders based on social features like economic status, familiarity, foundation or any other singularity. Make sure you have this data since it will be needed to address the allocation of some services. If this information is not easily available through any geospatial database (public or from any government agency) it must be consulted on field surveys.
 
