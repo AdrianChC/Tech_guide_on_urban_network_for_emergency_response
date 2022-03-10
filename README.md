@@ -24,7 +24,7 @@ There are 10 major task involved in this guide. Some of them are independent and
 <img src="/figs/fig02.jpg" alt="Suggested Work Flow" width="75%"/>
 
 ## Spatial scope definition
-Defining the spatial scope means to decide the extension of the urban area that will be covered. This location, from now on called area of interest, should be easily identifiable. Use land administration information or toponym to identify the spatial shape of this place. A simple query (Figure 3) on any map online service like Google Maps , Bing  or Open Street Maps  will provide a quick idea of it.
+Defining the spatial scope means to decide the extension of the urban area that will be covered. This location, from now on called area of interest, should be easily identifiable. Use land administration information or toponym to identify the spatial shape of this place. A simple query [(Figure 3)][3] on any map online service like Google Maps , Bing  or Open Street Maps  will provide a quick idea of it.
 
 <img src="/figs/fig03.jpg" alt="Boundaries of an AOI found on Google Maps" width="75%"/>
 
@@ -33,22 +33,21 @@ Identify socio spatial divisions inside the area of interest. That is non visibl
 ## Terrain data acquisition
 Acquire a digital elevation model for the area of interest. This might be acquired from the USGS Earth Explorer  platform. Find the mission SRTM  dataset, and find the most recent capture of the area of interest. Another characteristic to consider is resolution; a recommended one is 1 arc-second or 30m. Other sources of information might be the Copernicus Open Access Hub.
 
+The DEM will be the main source of information to derive morphological and hydrological analysis. As the DEM provided by any platform would cover a bigger size area than the area of interest, it is required to clip it to a more practical size [(Figure 4)][4] in order to make processing faster. Use the ‘Clip raster by extend’ algorithm from the GDAL  modules; find this and any other algorithm on the Processing Toolbox.
+
 <img src="/figs/fig04.jpg" alt="DEM covering the area of Bhopal (Madhya Pradesh, India)" width="75%"/>
 
-The DEM will be the main source of information to derive morphological and hydrological analysis. As the DEM provided by any platform would cover a bigger size area than the area of interest, it is required to clip it to a more practical size (Figure 4) in order to make processing faster. Use the ‘Clip raster by extend’ algorithm from the GDAL  modules; find this and any other algorithm on the Processing Toolbox.
-
 ## Hydrological analysis
-The hydrological analysis is composed by two calculus derived from the DEM. The Terrain Wetness Index and the Stream Power Index. 
-The Terrain Wetness Index (TWI) provides a relative score showing the areas where the terrain is most probable to accumulate water. It’s defined as: 
+The hydrological analysis is composed by two calculus derived from the DEM. The Terrain Wetness Index and the Stream Power Index. The Terrain Wetness Index (TWI) provides a relative score showing the areas where the terrain is most probable to accumulate water. It’s defined as: 
 (pending figure)
 
 In the QGIS environment, apply the next sequence of algorithms to calculate it: Use the ‘Flow Accumulation’ algorithm from the SAGA  modules; apply it to the DEM clip. The result is the local upslope catchment area (UCA). The local slope is calculated with the native ‘Slope’ algorithm; it should be transformed into radians. But first, the 0 values corrected since it would induce error when calculating natural logarithm; add 0.001 to the slope values.
 
-<img src="/figs/fig05.gif" alt="DEM and TWI (from left to right)" width="75%"/>
-
 Then, multiply the modified slope value 0.01745 times. In order to do this, use the ‘Raster Calculator’ algorithm; use it for any raster algebra operation. Finally, calculate the log normal function. The UCA must be multiplied by the X and Y values of raster pixel dimensions.
 
-The TWI (Figure 5) must be classified in 5 categories; quantile classification is suggested. Consider priority one or more classes of highest value. Use gathered information from field or imagery to make an informed and coherent prioritization.
+The TWI [(Figure 5)][6] must be classified in 5 categories; quantile classification is suggested. Consider priority one or more classes of highest value. Use gathered information from field or imagery to make an informed and coherent prioritization.
+
+<img src="/figs/fig05.gif" alt="DEM and TWI (from left to right)" width="75%"/>
 
 The Stream Power Index (SPI) provides a relative score to potential flow erosion. It shows areas where fluids are more probable to have more velocity, hence endangering dwells. It’s defined as: ((pending))
 
