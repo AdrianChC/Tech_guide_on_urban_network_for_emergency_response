@@ -103,3 +103,36 @@ Those nodes will be used to calculate its Steiner Tree. In the qgis environment,
 
 The result should be another network subset (Figure 16). This dataset contains few features. It also contains the most valuable roads in term of connectivity. In the next process, this results will be complemented with other roads.
 
+# Optimal Network 1.0
+The Optimal Network 1.0 uses the previously calculated Steiner Tree as the main input. The Steiner Tree must be complemented with roads that enhance its connectivity to the outer network of the area of interest (Figure 17). Use the combined network to services to pick the roads that best fit this requirement. Use the knowledge gathered from field work and imagery to decide properly.
+
+Now use the Compromised Roads data to evaluate for alternatives among the current roads of the network. Select alternatives in case extended areas of roads are compromised and whenever is possible.
+
+Evaluate the result by identifying the continuity among roads. A prioritized urban network presents straightness. Consider that turning roads is expensive in term of energy and time consumption. Whenever possible, consider this criteria to make small changes.
+
+## Community Consultation
+Present this result to the community and local leaders. Make sure the information is clear for them (Figure 18). Consider the use of one or even more maps to communicate the process of prioritization. Verify a proper use of colors and visual aids like icons. Avoid misleading communication. If this issue is not addressed properly before meetings, it will not be easily solved while debating.
+
+Make sure none of the visual content is somehow offensive. Colors often have different interpretations across cultures. Same as icons; representation of temples is not the same for Christians, Jews or Islamic. Also verify the use of proper language. 
+
+Collect the observations from the discussion. Make sure you have spatial observation. Comments from the community must have spatial information and value judgment. Use participatory tools to make everyone involved as much as possible.
+
+# Optimal Network 2.0
+Make the adjustments according to the commentaries from the meetings (Figure 19). Make further consultation with other stakeholders and experts. Present new results and validate them. It is important to address the commentaries from the community and give proper explanation of how their ideas where considered; even if it means to explain why a suggestions wasn’t taken.
+
+## Area of Coverage Identification
+A risk management application for area of coverage identification is micro-zoning (Figure 20). Which is based on network classification by proximity to a given service. The ‘v.net.alloc’ algorithm is a GRASS module that classifies a network into subsets corresponding to the closest feature of a give use or service. Which might be used to delimitate micro-zones for temporary shelters, field hospital or food provision. The parameters are an Input Vector Line and Center Point layers.
+
+parameters are an Input Vector Line and Center Point layers.
+The results could be processed to derive a polygon for each zone. Since there is not an algorithm for this task, it needs to be done manually. However, a convex hull  is easily computed with the native ‘Convex Hull’ algorithm. Use it as a basis for the polygons or do it from scratch. In any case, fine tune the micro-zones with on the field information.
+
+# Behavioral Study by Place
+Once the location of main services is done, further questions about behavior around its location could be addressed. By surveying, observing or counting on community’s knowledge, some of these questions could be addressed. One of the questions is agglomeration (Figure 21). Use intensity beyond safety is identifiable by any of the previous methods. Gather the information and mark the most crowded places. Add more complexity to the selection process if needed. 
+
+Use attributes to add scores, a rank values or a Boolean factor. This might be helpful to filter the points that meet the requirements. The same procedure could be applied to other features like roads, slums or even wards.
+This process is also applicable to identify wards based on vulnerability. If census information is available, it could be used to build an index based on the relevant variables for a given case (i.e. water supply, drainage service, household condition, etc.). Use the ‘Field Calculator’ to add variables and summarize them.
+
+## Service Distribution
+Waste management is an application of service distribution (Figure 22). It requires the identification of suitable places for waste collections. Use other compatible uses as a proxy of suitability; also considering wind direction as the garbage smells travels and transports unhealthy bacteria. Other criteria is accessibility, defined as useful road infrastructure for waste collector trucks. Use remote sensing imagery or field reports to address the relevant issues. 
+
+If there isn’t any other referential information to distribute services it is possible to segment a network based on their geometrical features. The ‘k-means clustering’ native algorithm divides any vector layer into a given set of clusters. Then use the ‘mean coordinate’ algorithm to identify the center of each part. Although it’s not based on use or any other feature rather than spatial distance, it should provide a starting point to discuss distribution. Furthermore, the center points of each zone might be used to evaluate any proposed spot.
