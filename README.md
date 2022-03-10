@@ -16,13 +16,17 @@ Make sure that any photograph taken on field has also location data. It reduces 
 
 Interoperability between this platform and qgis is reliable. To import/export the reports data just find the ‘Export to KML/KMZ’ action and select the necessary information; a vector layer will be created. On the qgis environment, open the data. Although it will not present the same icons, color or style the data would be just the same. It will be organized by vector type; that is points, lines or polygons.
 
-(figs/fig01.jpg "Field Work Report. Source: Spatial data and photos created by authors using Google My Maps, background map data ©2021 Google")
+![Field Work Report](/figs/fig01.jpg "Field Work Report")
 
 ## Major tasks and workflow
-There are 10 major task involved in this guide. Some of them are independent and some others are interdependent. Figure 2 represents the most efficient interaction between them. In the graph, the task are organized so that it could produce an outcome as fast as possible. Use this workflow schema to take advantage of the independency among task and stay ahead in the project’s development. However, organizational or environmental factors might affect the flow of information. Use alternatives responding to the project’s environment.
+There are 10 major task involved in this guide. Some of them are independent and some others are interdependent. [(Figure 02)][2] represents the most efficient interaction between them. In the graph, the task are organized so that it could produce an outcome as fast as possible. Use this workflow schema to take advantage of the independency among task and stay ahead in the project’s development. However, organizational or environmental factors might affect the flow of information. Use alternatives responding to the project’s environment.
+
+![Suggested Work Flow](/figs/fig02.jpg "Suggested Work Flow")
 
 ## Spatial scope definition
 Defining the spatial scope means to decide the extension of the urban area that will be covered. This location, from now on called area of interest, should be easily identifiable. Use land administration information or toponym to identify the spatial shape of this place. A simple query (Figure 3) on any map online service like Google Maps , Bing  or Open Street Maps  will provide a quick idea of it.
+
+![Boundaries of an AOI found on Google Maps](/figs/fig03.jpg "Boundaries of an AOI found on Google Maps")
 
 Identify socio spatial divisions inside the area of interest. That is non visible borders based on social features like economic status, familiarity, foundation or any other singularity. Make sure you have this data since it will be needed to address the allocation of some services. If this information is not easily available through any geospatial database (public or from any government agency) it must be consulted on field surveys.
 
@@ -140,3 +144,4 @@ Waste management is an application of service distribution (Figure 22). It requi
 If there isn’t any other referential information to distribute services it is possible to segment a network based on their geometrical features. The ‘k-means clustering’ native algorithm divides any vector layer into a given set of clusters. Then use the ‘mean coordinate’ algorithm to identify the center of each part. Although it’s not based on use or any other feature rather than spatial distance, it should provide a starting point to discuss distribution. Furthermore, the center points of each zone might be used to evaluate any proposed spot.
 
 [1]: figs/fig01.jpg
+[2]: figs/fig02.jpg
