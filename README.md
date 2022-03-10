@@ -10,7 +10,7 @@ Depending on the data availability it might be needed a location device like a s
 
 It’s is required to have access to the area of interest. A dedicated team to recognize the fieldwork and engage the local population will provide information that otherwise cannot be acquired. This team will be responsible to gather on the field spatial information and communicate it with the team in charge of spatial analysis. 
 
-Most of the communication should be based on thematic maps [https://github.com/AdrianChC/Tech_guide_on_urban_network_for_emergency_response/blob/bf02e94ac26f15e8d18481a69704f00f4e27b0b0/figs/fig01.jpg][Figure 1]. These maps are based on specific data regarding open spaces, markets, roads, physical risks, community services. Reports should gather imagery, location and commentaries. Is highly recommended to compose maps with applications like My Maps . Such applications allow you to easily build thematic maps based on the gathered information on the ground. It also makes it easier to share the information via link. 
+Most of the communication should be based on thematic maps [Figure 01][1]. These maps are based on specific data regarding open spaces, markets, roads, physical risks, community services. Reports should gather imagery, location and commentaries. Is highly recommended to compose maps with applications like My Maps . Such applications allow you to easily build thematic maps based on the gathered information on the ground. It also makes it easier to share the information via link. 
 
 Make sure that any photograph taken on field has also location data. It reduces human error at reporting location of any event. Consider the use of a single My Maps composition to stock each field work report organized into different layers.
 
@@ -136,3 +136,5 @@ This process is also applicable to identify wards based on vulnerability. If cen
 Waste management is an application of service distribution (Figure 22). It requires the identification of suitable places for waste collections. Use other compatible uses as a proxy of suitability; also considering wind direction as the garbage smells travels and transports unhealthy bacteria. Other criteria is accessibility, defined as useful road infrastructure for waste collector trucks. Use remote sensing imagery or field reports to address the relevant issues. 
 
 If there isn’t any other referential information to distribute services it is possible to segment a network based on their geometrical features. The ‘k-means clustering’ native algorithm divides any vector layer into a given set of clusters. Then use the ‘mean coordinate’ algorithm to identify the center of each part. Although it’s not based on use or any other feature rather than spatial distance, it should provide a starting point to discuss distribution. Furthermore, the center points of each zone might be used to evaluate any proposed spot.
+
+[1]: figs/fig01.jpg
