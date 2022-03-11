@@ -40,10 +40,13 @@ The DEM will be the main source of information to derive morphological and hydro
 ## Hydrological analysis
 The hydrological analysis is composed by two calculus derived from the DEM. The Terrain Wetness Index and the Stream Power Index. The Terrain Wetness Index (TWI) provides a relative score showing the areas where the terrain is most probable to accumulate water. It’s defined as: 
 
-> TWI=ln⁡〖 UCA/tan⁡SR 〗
-> *Where:
->> UCA = the local upslope catchment area 
->> SR = local slope in radians*
+```
+TWI=ln⁡〖 UCA/tan⁡SR 〗
+  
+  Where:
+  UCA = the local upslope catchment area
+  SR =  local slope in radians
+ ```
 
 In the QGIS environment, apply the next sequence of algorithms to calculate it: Use the `Flow Accumulation` algorithm from the SAGA[^12] modules; apply it to the DEM clip. The result is the local upslope catchment area (UCA). The local slope is calculated with the native `Slope` algorithm; it should be transformed into radians. But first, the 0 values corrected since it would induce error when calculating natural logarithm; add 0.001 to the slope values.
 
@@ -55,10 +58,13 @@ The TWI [(Figure 5)][5] must be classified in 5 categories; quantile classificat
 
 The Stream Power Index (SPI) provides a relative score to potential flow erosion. It shows areas where fluids are more probable to have more velocity, hence endangering dwells. It’s defined as:
 
-> SPI=ln⁡〖(UCA*tan⁡SR)〗
-> *Where:
->> UCA = the local upslope catchment area
->> SR = local slope in radians*
+```
+SPI=ln⁡〖(UCA*tan⁡SR)〗
+
+  Where:
+  UCA = the local upslope catchment area
+  SR  = local slope in radians
+```
 
 In the QGIS environment, use both the UCA and SR previously calculated. Proceed to multiply them; also multiply times the X and Y values of raster pixel dimensions. As before, use the `Raster Calculator` algorithm.
 
