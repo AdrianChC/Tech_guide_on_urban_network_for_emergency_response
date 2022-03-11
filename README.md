@@ -1,5 +1,5 @@
 # A technical guide on tier-one urban network for emergency response
-The objective of this guide is to identify the most useful road network in a specific loca-tion to get to the main services around in case of emergency. This guide could be used in slums or other areas, regardless of size. However, areas at the scale of cities or even wards requires heavier computational analysis and a more complex process of decision making that is not covered in this guide.
+The objective of this guide is to identify the most useful road network in a specific location to get to the main services around in case of emergency. This guide could be used in slums or other areas, regardless of size. However, areas at the scale of cities or even wards requires heavier computational analysis and a more complex process of decision making that is not covered in this guide.
 
 This guide is based in the work of the department of Urbanization and Sustainable Cities[^1]  of GRADE and the lessons learned from the project Capacity Building for Smart Data and Inclusive Cities in India[^2]. 
 
