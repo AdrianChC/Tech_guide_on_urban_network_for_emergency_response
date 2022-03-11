@@ -87,21 +87,29 @@ Once the information has been produced [(Figure 9)][9], combine all those layers
 ## Field work
 Make exploratory walks to recognize major features in the area like roads, open areas, services of any kind, location of local leaders, local government agencies, water bodies or any other natural feature. Acquire on the field information of the most important uses. Identify them by talking to community members and leaders. Arrange a meeting if necessary.
 
-Use categories to classify the data (Figure 10). The following might be useful for any situation: health services, groceries or food providers, waste collection, community public services, places of worship or temples, and parks or open spaces.
+Use categories to classify the data [(Figure 10)][10]. The following might be useful for any situation: health services, groceries or food providers, waste collection, community public services, places of worship or temples, and parks or open spaces.
+
+<img src="/figs/fig10.jpg" alt="Services and Places location classified by type" width="75%"/>
 
 Identify the priority places among all of them. Focus groups or participatory techniques will help you identify the hierarchy in each category; which must be based on use intensity.
 
 ## Compromised Roads Identification
-Use the updated Road Network to juxtapose the hydrological and morphological analysis (Figure 11). Make a visual observation to identify intersections and evaluate how much length of roads are compromised to represent a real risk. Once the compromise roads are identified, these observations will be used to improve the tier one network. 
+Use the updated Road Network to juxtapose the hydrological and morphological analysis [(Figure 11)][11]. Make a visual observation to identify intersections and evaluate how much length of roads are compromised to represent a real risk. Once the compromise roads are identified, these observations will be used to improve the tier one network. 
+
+<img src="/figs/fig11.jpg" alt="Updated Network and Hydrological Analysis" width="75%"/>
 
 This is mandatory since otherwise the analysis would produce inaccurate results. Remember to get in contact with the government agency that manages this information; it might reduce the amount of efforts on this task.
 
 ## Shortest Distance Network to Services
 For every class of service or main use that has been previously prioritized, you should calculate a shortest distance network. A shortest distance network connects a pair of data points with another set of points in the most efficient way. One data set must be a priority class service. It means that this calculus must be repeated for each of class. The other data set will the same for all calculus.
 
-This data set should contain the points with the lowest score in the network’s hierarchy. Those points are connected to the network by one road. This score is called degree of centrality , which is defined as the number of links incident upon a node. In the QGIS environment (Figure 12), apply the ‘v.net.centrality’ algorithm; which is a GRASS  module used to calculate the degree of centrality (also known as Cd) and other centrality measurements.
+This data set should contain the points with the lowest score in the network’s hierarchy. Those points are connected to the network by one road. This score is called degree of centrality , which is defined as the number of links incident upon a node. In the QGIS environment [(Figure 12)][12], apply the ‘v.net.centrality’ algorithm; which is a GRASS  module used to calculate the degree of centrality (also known as Cd) and other centrality measurements.
 
-Once the degree of centrality is calculated, the ones with lowest score must be selected. This is achieved by using the ‘Select Features’ action. Write the minimum value available from the degree of centrality column. Depending on the number of vertex of the network, the values would be different from the example (Figure 13). However, if the network was cleaned as described before, it should have no more than 5 different values; each one for each degree.
+<img src="/figs/fig12.jpg" alt="Location and parameter of 'v.net.centrality' algorithm" width="75%"/>
+
+Once the degree of centrality is calculated, the ones with lowest score must be selected. This is achieved by using the ‘Select Features’ action. Write the minimum value available from the degree of centrality column. Depending on the number of vertex of the network, the values would be different from the example [(Figure 13)][13]. However, if the network was cleaned as described before, it should have no more than 5 different values; each one for each degree.
+
+<img src="/figs/fig13.jpg" alt="Degree of Centrality for a given urban network" width="75%"/>
 
 To calculate the shortest distance path use the ‘v.net.distance’ algorithm, it’s another module from the GRASS library. It requires three data inputs, which corresponds to the starting point of the shortest path, the end points, and the network that contains both datasets. Use as ‘Input Vector from Points Layers’ the previously calculated nodes with minimum Cd, use as ‘Input Vector to Layer’ the prioritize nodes from each one of the use categories, and as the ‘Input Vector Line Layer’ the updated version of the network.
 
@@ -109,7 +117,9 @@ Once each calculus is done, clean each result by eliminating duplicity of featur
 
 Then all the networks should be combined into one single network containing all shortest distance networks. Use the ‘Merge vector layer’ algorithm from the Processing Toolbox. Then, as in the previous networks, eliminating duplicates is necessary. Use the same procedure as before.
 
-The combined network is a subset of the main one (Figure 14). It contains all shortest path to any service from the weakest points in the main network. However is not optimized yet, as it present redundancies among services from different classes that are near. Therefore, a tier one network should be calculated.
+The combined network is a subset of the main one [(Figure 14)][14]. It contains all shortest path to any service from the weakest points in the main network. However is not optimized yet, as it present redundancies among services from different classes that are near. Therefore, a tier one network should be calculated.
+
+<img src="/figs/fig14.jpg" alt="Combined Shortest Distance Network on top of the original Network" width="75%"/>
 
 ## Steiner Tree
 A Steiner tree  is an optimization solution for networks. It identifies the most efficient way to communicate a subset of nodes inside a network. This algorithm will be used to connect the nodes with the highest score in the network’s hierarchy. But this time, the centrality measure must be the betweenness centrality   (also known as Cb). Its calculus follows the same ‘v.net.centrality’ algorithm as before. To identify the nodes with the highest values, use the ‘Statistics’ Panel and find the lower end of the 4th Quantile (Figure 15).
@@ -163,3 +173,8 @@ If there isn’t any other referential information to distribute services it is 
 [7]: figs/fig07.jpg
 [8]: figs/fig08.jpg
 [9]: figs/fig09.jpg
+[10]: figs/fig10.jpg
+[11]: figs/fig11.jpg
+[12]: figs/fig12.jpg
+[13]: figs/fig13.jpg
+[14]: figs/fig14.jpg
