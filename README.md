@@ -31,9 +31,9 @@ Defining the spatial scope means to decide the extension of the urban area that 
 Identify socio spatial divisions inside the area of interest. That is non visible borders based on social features like economic status, familiarity, foundation or any other singularity. Make sure you have this data since it will be needed to address the allocation of some services. If this information is not easily available through any geospatial database (public or from any government agency) it must be consulted on field surveys.
 
 ## Terrain data acquisition
-Acquire a digital elevation model for the area of interest. This might be acquired from the USGS Earth Explorer  platform. Find the mission SRTM  dataset, and find the most recent capture of the area of interest. Another characteristic to consider is resolution; a recommended one is 1 arc-second or 30m. Other sources of information might be the Copernicus Open Access Hub.
+Acquire a digital elevation model for the area of interest. This might be acquired from the USGS Earth Explorer[^8] platform. Find the mission SRTM[^9] dataset, and find the most recent capture of the area of interest. Another characteristic to consider is resolution; a recommended one is 1 arc-second or 30m. Other sources of information might be the Copernicus Open Access Hub[^10].
 
-The DEM will be the main source of information to derive morphological and hydrological analysis. As the DEM provided by any platform would cover a bigger size area than the area of interest, it is required to clip it to a more practical size [(Figure 4)][4] in order to make processing faster. Use the ‘Clip raster by extend’ algorithm from the GDAL  modules; find this and any other algorithm on the Processing Toolbox.
+The DEM will be the main source of information to derive morphological and hydrological analysis. As the DEM provided by any platform would cover a bigger size area than the area of interest, it is required to clip it to a more practical size [(Figure 4)][4] in order to make processing faster. Use the ‘Clip raster by extend’ algorithm from the GDAL[^11] modules; find this and any other algorithm on the Processing Toolbox.
 
 <img src="/figs/fig04.jpg" alt="DEM covering the area of Bhopal (Madhya Pradesh, India)" width="75%"/>
 
@@ -41,7 +41,7 @@ The DEM will be the main source of information to derive morphological and hydro
 The hydrological analysis is composed by two calculus derived from the DEM. The Terrain Wetness Index and the Stream Power Index. The Terrain Wetness Index (TWI) provides a relative score showing the areas where the terrain is most probable to accumulate water. It’s defined as: 
 (pending figure)
 
-In the QGIS environment, apply the next sequence of algorithms to calculate it: Use the ‘Flow Accumulation’ algorithm from the SAGA  modules; apply it to the DEM clip. The result is the local upslope catchment area (UCA). The local slope is calculated with the native ‘Slope’ algorithm; it should be transformed into radians. But first, the 0 values corrected since it would induce error when calculating natural logarithm; add 0.001 to the slope values.
+In the QGIS environment, apply the next sequence of algorithms to calculate it: Use the ‘Flow Accumulation’ algorithm from the SAGA[^12] modules; apply it to the DEM clip. The result is the local upslope catchment area (UCA). The local slope is calculated with the native ‘Slope’ algorithm; it should be transformed into radians. But first, the 0 values corrected since it would induce error when calculating natural logarithm; add 0.001 to the slope values.
 
 Then, multiply the modified slope value 0.01745 times. In order to do this, use the ‘Raster Calculator’ algorithm; use it for any raster algebra operation. Finally, calculate the log normal function. The UCA must be multiplied by the X and Y values of raster pixel dimensions.
 
@@ -64,7 +64,7 @@ The slope is a measure of inclination of the terrain. It’s also a derivate pro
 
 <img src="/figs/fig07.jpg" alt="Slope algorithm's location and parameters" width="75%"/>
 
-Use a benchmark value  to identify areas where there could be any risk related to slope. That value should be used to identify areas where the slope value is below or above the value, ergo at risk or not. The areas above the benchmark value should be prioritized. Use gathered information from field or imagery to make an informed and coherent decision. Also consider that the units from your slope calculation correlates to the benchmark value.
+Use a benchmark value[^13] to identify areas where there could be any risk related to slope. That value should be used to identify areas where the slope value is below or above the value, ergo at risk or not. The areas above the benchmark value should be prioritized. Use gathered information from field or imagery to make an informed and coherent decision. Also consider that the units from your slope calculation correlates to the benchmark value.
 
 ## Urban and Land Administration Data acquisition
 In order to analyze spatial data it is necessary to gather as much geo-referenced information as possible. This project requires four types of data at least. Administrative boundaries like wards, slums or other known areas should be collected from government agencies like the Department of Science & Technology; it’s common that District Geo-portals [(Figure 8)][8] allow to visualize spatial information. Make a formal request of information, get an alternative source of information or even scrap it.
@@ -211,3 +211,9 @@ If there isn’t any other referential information to distribute services it is 
 [^5]: It’s an online service run by Google. Allows users to consult and share geospatial information.
 [^6]: It’s an online service run by Microsoft. Allows users to consult and share geospatial information.
 [^7]: It’s a collaborative project to create a free editable geographic database of the world.
+[^8]: It’s a client/server interfaces that provides access to the US Geological Survey Earth Resources Observation and Science Center archive.
+[^9]:The Shuttle Radar Topography Mission is an international research effort to obtain digital elevation models on a near global scale. 
+[^10]:The Copernicus Open Access Hub (previously known as Sentinels Scientific Data Hub) provides complete, free and open access to Sentinel-1, Sentinel-2, Sentinel-3 and Sentinel-5P user products.
+[^11]:GDAL is an Open Source library for raster and vector geospatial data formats that is released by the Open Source Geospatial Foundation.
+[^12]: SAGA GIS is a geographic information system (GIS) computer program, used to edit spatial data.
+[^13]: In the city of Lima, 24% is the slope value where urban areas start showing signs of restraints. Service and mobility access decreases as physical risk increases. At 43% is by any means recommend to inhabit.
