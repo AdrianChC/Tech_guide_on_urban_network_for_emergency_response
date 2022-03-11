@@ -204,14 +204,14 @@ If there isn’t any other referential information to distribute services it is 
 [21]: figs/fig21.jpg
 [22]: figs/fig22.jpg
 
-[^1]: Head by R. Fort and A. Espinoza. For more into referred work, consult [here][https://www.grade.org.pe/areas-de-investigacion/urbanizacion-y-ciudades-sostenibles/]
-[^2]: A co-authored project with the Institute for Development Studies (UK) featuring [Samarthan Centre for Development Support][https://www.ids.ac.uk/projects/capacity-building-for-smart-data-and-inclusive-cities-sdic/ ] (India)
-[^3]: It’s a free and open-source cross-platform desktop geographic information system application that supports viewing, editing, and analysis if geospatial data.
+[^1]: Head by R. Fort and A. Espinoza. For more into referred work, consult [here](https://www.grade.org.pe/areas-de-investigacion/urbanizacion-y-ciudades-sostenibles/)
+[^2]: A co-authored project with the Institute for Development Studies (UK) featuring [Samarthan Centre for Development Support](https://www.ids.ac.uk/projects/capacity-building-for-smart-data-and-inclusive-cities-sdic/) (India)
+[^3]: QGIS is a free and open-source cross-platform desktop geographic information system application that supports viewing, editing, and analysis if geospatial data.
 [^4]: My Maps is an online service run by Google. It allows users to build personalized maps for their own use or to share.
-[^5]: It’s an online service run by Google. Allows users to consult and share geospatial information.
-[^6]: It’s an online service run by Microsoft. Allows users to consult and share geospatial information.
-[^7]: It’s a collaborative project to create a free editable geographic database of the world.
-[^8]: It’s a client/server interfaces that provides access to the US Geological Survey Earth Resources Observation and Science Center archive.
+[^5]: Google Maps is an online service run by Google. Allows users to consult and share geospatial information.
+[^6]: Bing is an online service run by Microsoft. Allows users to consult and share geospatial information.
+[^7]: Open Street Maps is a collaborative project to create a free editable geographic database of the world.
+[^8]: USGS Earth Explorer is a client/server interfaces that provides access to the US Geological Survey Earth Resources Observation and Science Center archive.
 [^9]: The Shuttle Radar Topography Mission is an international research effort to obtain digital elevation models on a near global scale. 
 [^10]: The Copernicus Open Access Hub (previously known as Sentinels Scientific Data Hub) provides complete, free and open access to Sentinel-1, Sentinel-2, Sentinel-3 and Sentinel-5P user products.
 [^11]: GDAL is an Open Source library for raster and vector geospatial data formats that is released by the Open Source Geospatial Foundation.
