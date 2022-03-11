@@ -62,10 +62,14 @@ Both the TWI and SPI will be used to identify the most compromised roads and pla
 ## Morphological analysis
 The slope is a measure of inclination of the terrain. It’s also a derivate product of the DEM. The calculus provides an inclination value at any given area. It shows where inclination could be compromising dwells. In the QGIS environment (Figure 7), apply the GDAL algorithm ‘Slope’ to calculate it. Most GIS software have a native algorithm for slopes since it’s a basic calculation. Consider that slope units might be expressed as degree, radians or even percent.
 
+<img src="/figs/fig07.jpg" alt="Slope algorithm's location and parameters" width="75%"/>
+
 Use a benchmark value  to identify areas where there could be any risk related to slope. That value should be used to identify areas where the slope value is below or above the value, ergo at risk or not. The areas above the benchmark value should be prioritized. Use gathered information from field or imagery to make an informed and coherent decision. Also consider that the units from your slope calculation correlates to the benchmark value.
 
 ## Urban and Land Administration Data acquisition
-In order to analyze spatial data it is necessary to gather as much geo-referenced information as possible. This project requires four types of data at least. Administrative boundaries like wards, slums or other known areas should be collected from government agencies like the Department of Science & Technology; it’s common that District Geo-portals (Figure 8) allow to visualize spatial information. Make a formal request of information, get an alternative source of information or even scrap it. 
+In order to analyze spatial data it is necessary to gather as much geo-referenced information as possible. This project requires four types of data at least. Administrative boundaries like wards, slums or other known areas should be collected from government agencies like the Department of Science & Technology; it’s common that District Geo-portals (Figure 8) allow to visualize spatial information. Make a formal request of information, get an alternative source of information or even scrap it.
+
+<img src="/figs/fig08.jpg" alt="Online Platform of the Bhopal District Geoportal" width="75%"/>
 
 The other three types of information are road network, water bodies and services. Which could be gathered quickly from open sources like Geofabrik . Once the data has been collected, the gaps of information should be identified and completed. Particularly for urban network information.
 
@@ -73,10 +77,12 @@ Complete the gaps with data from multiple sources like remote sensing imagery, s
 
 However, a field survey dedicated to road network data might cover the gaps of information and other aspects. This is done by walking around the area with a tracking device. Using the GPS from a smartphone is possible but is highly recommended to use a standalone GPS device for accuracy.
 
-Once the information has been produced (Figure 9), combine all those layers into a single one. Then, prepare the improved urban network for spatial analysis. That is, process it so that is has the next characteristic:
+Once the information has been produced [(Figure 9)][9], combine all those layers into a single one. Then, prepare the improved urban network for spatial analysis. That is, process it so that is has the next characteristic:
 
 -	A line feature for each piece of road between corner to corner of the streets. 
 -	A line feature represents a road regardless if road is bidirectional or not.
+
+<img src="/figs/fig09.jpg" alt="Road layer stacked by different sources" width="75%"/>
 
 ## Field work
 Make exploratory walks to recognize major features in the area like roads, open areas, services of any kind, location of local leaders, local government agencies, water bodies or any other natural feature. Acquire on the field information of the most important uses. Identify them by talking to community members and leaders. Arrange a meeting if necessary.
@@ -154,3 +160,6 @@ If there isn’t any other referential information to distribute services it is 
 [4]: figs/fig04.jpg
 [5]: figs/fig05.gif
 [6]: figs/fig06.gif
+[7]: figs/fig07.jpg
+[8]: figs/fig08.jpg
+[9]: figs/fig09.jpg
