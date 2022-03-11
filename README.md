@@ -1,16 +1,16 @@
 # A technical guide on tier-one urban network for emergency response
 The objective of this guide is to identify the most useful road network in a specific loca-tion to get to the main services around in case of emergency. This guide could be used in slums or other areas, regardless of size. However, areas at the scale of cities or even wards requires heavier computational analysis and a more complex process of decision making that is not covered in this guide.
 
-This guide is based in the work of the department of Urbanization and Sustainable Cities  of GRADE and the lessons learned from the project Capacity Building for Smart Data and Inclusive Cities in India. 
+This guide is based in the work of the department of Urbanization and Sustainable Cities[^1]  of GRADE and the lessons learned from the project Capacity Building for Smart Data and Inclusive Cities in India[^2]. 
 
 ## General and Software Requirements
-This technical guide requires use of spatial information. So it needs software to process this kind of information. It’s highly recommendable to use QGIS . Download and install the latest LTR version. The algorithms referred on this guide come from QGIS. However, they have equivalents on similar software like ARCGIS since the processing tasks are public domain. 
+This technical guide requires use of spatial information. So it needs software to process this kind of information. It’s highly recommendable to use QGIS[^3]. Download and install the latest LTR version. The algorithms referred on this guide come from QGIS. However, they have equivalents on similar software like ARCGIS since the processing tasks are public domain. 
 
 Depending on the data availability it might be needed a location device like a smartphone. It’s highly recommendable to use a standalone device for more accuracy. The average accuracy of a smartphone range from 3 – 50 meters, depending on the location of the area of interest and the device’s technology. A dedicated device has a location accuracy of 0.5 – 1 meters. Using this kind of device will increase the precision of the location register and reduce the post processing time.
 
 It’s is required to have access to the area of interest. A dedicated team to recognize the fieldwork and engage the local population will provide information that otherwise cannot be acquired. This team will be responsible to gather on the field spatial information and communicate it with the team in charge of spatial analysis. 
 
-Most of the communication should be based on thematic maps [(Figure 01)][1]. These maps are based on specific data regarding open spaces, markets, roads, physical risks, community services. Reports should gather imagery, location and commentaries. Is highly recommended to compose maps with applications like My Maps . Such applications allow you to easily build thematic maps based on the gathered information on the ground. It also makes it easier to share the information via link. 
+Most of the communication should be based on thematic maps [(Figure 01)][1]. These maps are based on specific data regarding open spaces, markets, roads, physical risks, community services. Reports should gather imagery, location and commentaries. Is highly recommended to compose maps with applications like My Maps[^4]. Such applications allow you to easily build thematic maps based on the gathered information on the ground. It also makes it easier to share the information via link. 
 
 Make sure that any photograph taken on field has also location data. It reduces human error at reporting location of any event. Consider the use of a single My Maps composition to stock each field work report organized into different layers.
 
@@ -24,7 +24,7 @@ There are 10 major task involved in this guide. Some of them are independent and
 <img src="/figs/fig02.jpg" alt="Suggested Work Flow" width="75%"/>
 
 ## Spatial scope definition
-Defining the spatial scope means to decide the extension of the urban area that will be covered. This location, from now on called area of interest, should be easily identifiable. Use land administration information or toponym to identify the spatial shape of this place. A simple query [(Figure 3)][3] on any map online service like Google Maps , Bing  or Open Street Maps  will provide a quick idea of it.
+Defining the spatial scope means to decide the extension of the urban area that will be covered. This location, from now on called area of interest, should be easily identifiable. Use land administration information or toponym to identify the spatial shape of this place. A simple query [(Figure 3)][3] on any map online service like Google Maps[^5] , Bing[^6]  or Open Street Maps[^7]  will provide a quick idea of it.
 
 <img src="/figs/fig03.jpg" alt="Boundaries of an AOI found on Google Maps" width="75%"/>
 
@@ -203,3 +203,11 @@ If there isn’t any other referential information to distribute services it is 
 [20]: figs/fig20.jpg
 [21]: figs/fig21.jpg
 [22]: figs/fig22.jpg
+
+[^1]: Head by R. Fort and A. Espinoza. For more into referred work, consult [here][https://www.grade.org.pe/areas-de-investigacion/urbanizacion-y-ciudades-sostenibles/]
+[^2]: A co-authored project with the Institute for Development Studies (UK) featuring [Samarthan Centre for Development Support][https://www.ids.ac.uk/projects/capacity-building-for-smart-data-and-inclusive-cities-sdic/ ] (India)
+[^3]: It’s a free and open-source cross-platform desktop geographic information system application that supports viewing, editing, and analysis if geospatial data.
+[^4]: My Maps is an online service run by Google. It allows users to build personalized maps for their own use or to share.
+[^5]: It’s an online service run by Google. Allows users to consult and share geospatial information.
+[^6]: It’s an online service run by Microsoft. Allows users to consult and share geospatial information.
+[^7]: It’s a collaborative project to create a free editable geographic database of the world.
