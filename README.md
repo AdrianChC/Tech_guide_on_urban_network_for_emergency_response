@@ -71,9 +71,9 @@ In order to analyze spatial data it is necessary to gather as much geo-reference
 
 <img src="/figs/fig08.jpg" alt="Online Platform of the Bhopal District Geoportal" width="75%"/>
 
-The other three types of information are road network, water bodies and services. Which could be gathered quickly from open sources like Geofabrik . Once the data has been collected, the gaps of information should be identified and completed. Particularly for urban network information.
+The other three types of information are road network, water bodies and services. Which could be gathered quickly from open sources like Geofabrik[^14]. Once the data has been collected, the gaps of information should be identified and completed. Particularly for urban network information.
 
-Complete the gaps with data from multiple sources like remote sensing imagery, spatial surveys or even government agencies. Depending on the case, it might be necessary to buy the data from a third party organization like Image Hunter . Producing the information might be a choice if there is a drone survey provider on the area. In both cases, the imagery will be used as a reference to add the new road information manually. That is, drawing each road as precisely as possible.
+Complete the gaps with data from multiple sources like remote sensing imagery, spatial surveys or even government agencies. Depending on the case, it might be necessary to buy the data from a third party organization like Image Hunter[^15]. Producing the information might be a choice if there is a drone survey provider on the area. In both cases, the imagery will be used as a reference to add the new road information manually. That is, drawing each road as precisely as possible.
 
 However, a field survey dedicated to road network data might cover the gaps of information and other aspects. This is done by walking around the area with a tracking device. Using the GPS from a smartphone is possible but is highly recommended to use a standalone GPS device for accuracy.
 
@@ -103,7 +103,7 @@ This is mandatory since otherwise the analysis would produce inaccurate results.
 ## Shortest Distance Network to Services
 For every class of service or main use that has been previously prioritized, you should calculate a shortest distance network. A shortest distance network connects a pair of data points with another set of points in the most efficient way. One data set must be a priority class service. It means that this calculus must be repeated for each of class. The other data set will the same for all calculus.
 
-This data set should contain the points with the lowest score in the network’s hierarchy. Those points are connected to the network by one road. This score is called degree of centrality , which is defined as the number of links incident upon a node. In the QGIS environment [(Figure 12)][12], apply the ‘v.net.centrality’ algorithm; which is a GRASS  module used to calculate the degree of centrality (also known as Cd) and other centrality measurements.
+This data set should contain the points with the lowest score in the network’s hierarchy. Those points are connected to the network by one road. This score is called degree of centrality[^16], which is defined as the number of links incident upon a node. In the QGIS environment [(Figure 12)][12], apply the ‘v.net.centrality’ algorithm; which is a GRASS[^17] module used to calculate the degree of centrality (also known as Cd) and other centrality measurements.
 
 <img src="/figs/fig12.jpg" alt="Location and parameter of 'v.net.centrality' algorithm" width="75%"/>
 
@@ -122,7 +122,7 @@ The combined network is a subset of the main one [(Figure 14)][14]. It contains 
 <img src="/figs/fig14.jpg" alt="Combined Shortest Distance Network on top of the original Network" width="75%"/>
 
 ## Steiner Tree
-A Steiner tree  is an optimization solution for networks. It identifies the most efficient way to communicate a subset of nodes inside a network. This algorithm will be used to connect the nodes with the highest score in the network’s hierarchy. But this time, the centrality measure must be the betweenness centrality   (also known as Cb). Its calculus follows the same ‘v.net.centrality’ algorithm as before. To identify the nodes with the highest values, use the ‘Statistics’ Panel and find the lower end of the 4th Quantile [(Figure 15)][15].
+A Steiner tree[^18] is an optimization solution for networks. It identifies the most efficient way to communicate a subset of nodes inside a network. This algorithm will be used to connect the nodes with the highest score in the network’s hierarchy. But this time, the centrality measure must be the betweenness centrality[^19] (also known as Cb). Its calculus follows the same ‘v.net.centrality’ algorithm as before. To identify the nodes with the highest values, use the ‘Statistics’ Panel and find the lower end of the 4th Quantile [(Figure 15)][15].
 
 <img src="/figs/fig15.jpg" alt="Value Identification and Selection of Q4 Betweenness Centrality" width="75%"/>
 
@@ -163,7 +163,7 @@ A risk management application for area of coverage identification is micro-zonin
 <img src="/figs/fig20.jpg" alt="Services Area of Coverage" width="75%"/>
 
 parameters are an Input Vector Line and Center Point layers.
-The results could be processed to derive a polygon for each zone. Since there is not an algorithm for this task, it needs to be done manually. However, a convex hull  is easily computed with the native ‘Convex Hull’ algorithm. Use it as a basis for the polygons or do it from scratch. In any case, fine tune the micro-zones with on the field information.
+The results could be processed to derive a polygon for each zone. Since there is not an algorithm for this task, it needs to be done manually. However, a convex hull[^20] is easily computed with the native ‘Convex Hull’ algorithm. Use it as a basis for the polygons or do it from scratch. In any case, fine tune the micro-zones with on the field information.
 
 # Behavioral Study by Place
 Once the location of main services is done, further questions about behavior around its location could be addressed. By surveying, observing or counting on community’s knowledge, some of these questions could be addressed. One of the questions is agglomeration [(Figure 21)][21]. Use intensity beyond safety is identifiable by any of the previous methods. Gather the information and mark the most crowded places. Add more complexity to the selection process if needed. 
@@ -212,8 +212,16 @@ If there isn’t any other referential information to distribute services it is 
 [^6]: It’s an online service run by Microsoft. Allows users to consult and share geospatial information.
 [^7]: It’s a collaborative project to create a free editable geographic database of the world.
 [^8]: It’s a client/server interfaces that provides access to the US Geological Survey Earth Resources Observation and Science Center archive.
-[^9]:The Shuttle Radar Topography Mission is an international research effort to obtain digital elevation models on a near global scale. 
-[^10]:The Copernicus Open Access Hub (previously known as Sentinels Scientific Data Hub) provides complete, free and open access to Sentinel-1, Sentinel-2, Sentinel-3 and Sentinel-5P user products.
-[^11]:GDAL is an Open Source library for raster and vector geospatial data formats that is released by the Open Source Geospatial Foundation.
+[^9]: The Shuttle Radar Topography Mission is an international research effort to obtain digital elevation models on a near global scale. 
+[^10]: The Copernicus Open Access Hub (previously known as Sentinels Scientific Data Hub) provides complete, free and open access to Sentinel-1, Sentinel-2, Sentinel-3 and Sentinel-5P user products.
+[^11]: GDAL is an Open Source library for raster and vector geospatial data formats that is released by the Open Source Geospatial Foundation.
 [^12]: SAGA GIS is a geographic information system (GIS) computer program, used to edit spatial data.
 [^13]: In the city of Lima, 24% is the slope value where urban areas start showing signs of restraints. Service and mobility access decreases as physical risk increases. At 43% is by any means recommend to inhabit.
+[^14]: Geofabrik is a provider of geodata, its database comes mainly from Open Street Map and it’s also open data.
+[^15]: Hunter is an on-demand provider of geodata; it has multiple sources of remote sensing data with high resolution. Check the WorldView 2 dataset; it’s one of the most high resolution datasets available.
+[^16]: Degree of centrality (Cd) is one of many measurements of centralities for network analysis and graph theory. It is also the simplest one. It can be interpreted as the immediate possibility of transmission of information through the vertex of a network.
+[^17]: Geographic Resources Analysis Support System (GRASS GIS) is a GIS software suite used for geospatial tasks including analysis. QGIS provides a user-friendly interface for GRASS modules (units of software that processes data).
+[^18]: A Steiner tree is an optimization solution for a given subset of vertex on a network. It’s the network composed by the shortest paths between the given subset of vertex.
+[^19]: Betweenness centrality (Cb) is a measure of centrality based on shortest distance among vertex. Which are scored according to the number of times they are part of the shortest path between each pair of vertex on a given network.
+[^20]: In geometry, the convex hull of a shape is the smallest convex set that contains it. It may be defined either as the intersection of all convex sets containing a given subset of a Euclidean space.
+
