@@ -45,15 +45,17 @@ In the QGIS environment, apply the next sequence of algorithms to calculate it: 
 
 Then, multiply the modified slope value 0.01745 times. In order to do this, use the ‘Raster Calculator’ algorithm; use it for any raster algebra operation. Finally, calculate the log normal function. The UCA must be multiplied by the X and Y values of raster pixel dimensions.
 
-The TWI [(Figure 5)][6] must be classified in 5 categories; quantile classification is suggested. Consider priority one or more classes of highest value. Use gathered information from field or imagery to make an informed and coherent prioritization.
+The TWI [(Figure 5)][5] must be classified in 5 categories; quantile classification is suggested. Consider priority one or more classes of highest value. Use gathered information from field or imagery to make an informed and coherent prioritization.
 
-<img src="/figs/fig05.gif" alt="DEM and TWI (from left to right)" width="75%"/>
+<img src="/figs/fig05.gif" alt="DEM and TWI" width="75%"/>
 
 The Stream Power Index (SPI) provides a relative score to potential flow erosion. It shows areas where fluids are more probable to have more velocity, hence endangering dwells. It’s defined as: ((pending))
 
 In the QGIS environment, use both the UCA and SR previously calculated. Proceed to multiply them; also multiply times the X and Y values of raster pixel dimensions. As before, use the ‘Raster Calculator’ algorithm.
 
-The SPI (Figure 6) must be classified in 5 categories; quantile classification is suggested. Consider priority one or more classes of highest value. Use gathered information from field or imagery to make an informed and coherent prioritization. 
+The SPI [(Figure 6)][6] must be classified in 5 categories; quantile classification is suggested. Consider priority one or more classes of highest value. Use gathered information from field or imagery to make an informed and coherent prioritization.
+
+<img src="/figs/fig06.gif" alt="DEM and SPI" width="75%"/>
 
 Both the TWI and SPI will be used to identify the most compromised roads and places on the area of interest. If other sources of hydrological data are available, even better. Especially if those data are based on actual records of flooding or precipitation. Other calculus based on remote sensing imagery are also recommended; apply this if there is data available for before and after a referential flood event.
 
@@ -148,3 +150,7 @@ If there isn’t any other referential information to distribute services it is 
 
 [1]: figs/fig01.jpg
 [2]: figs/fig02.jpg
+[3]: figs/fig03.jpg
+[4]: figs/fig04.jpg
+[5]: figs/fig05.gif
+[6]: figs/fig06.gif
